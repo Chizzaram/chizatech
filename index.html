@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CHIZA TECH ACE LTD — Naira ⇄ Shilling Exchange</title>
+<meta name="description" content="CHIZA TECH ACE LTD converts Nigerian Naira (NGN) to Kenyan Shillings (KES) and back for verified individuals and small businesses moving money between Nigeria and Kenya." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10201A;
+    --bg:#F6F7F3;
+    --panel:#FFFFFF;
+    --green:#0E6B4A;
+    --green-deep:#0A5238;
+    --brass:#B98A00;
+    --line:#DDE2DA;
+    --muted:#5C6B63;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  h1,h2,h3,.display{font-family:'Archivo',sans-serif}
+  a{color:var(--green-deep)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+  /* header */
+  header{
+    position:sticky;top:0;z-index:10;
+    background:rgba(246,247,243,.92);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:'Archivo';font-weight:800;font-size:1.15rem;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+  .brand span{color:var(--green)}
+  .nav-links{display:flex;gap:22px;font-size:.9rem}
+  .nav-links a{text-decoration:none;color:var(--muted);font-weight:500}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--green-deep)}
+  @media(max-width:640px){.nav-links{display:none}}
+
+  /* hero with corridor strip signature */
+  .hero{padding:72px 0 56px}
+  .corridor{
+    display:flex;align-items:center;gap:14px;
+    font-family:'Archivo';font-weight:700;font-size:.85rem;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--brass);
+    margin-bottom:18px;
+  }
+  .corridor .dotline{flex:0 0 72px;height:2px;background:
+    repeating-linear-gradient(90deg,var(--brass) 0 6px,transparent 6px 12px)}
+  .hero h1{
+    font-size:clamp(2.1rem,5.5vw,3.4rem);
+    font-weight:800;letter-spacing:-.02em;line-height:1.08;
+    max-width:16ch;
+  }
+  .hero h1 em{font-style:normal;color:var(--green)}
+  .hero p.lede{margin:20px 0 30px;max-width:52ch;color:var(--muted);font-size:1.05rem}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:start}
+  @media(max-width:760px){.hero-grid{grid-template-columns:1fr}}
+
+  /* rate card */
+  .rate-card{
+    background:var(--ink);color:#EAF2ED;border-radius:14px;
+    padding:26px 26px 22px;box-shadow:0 14px 34px rgba(16,32,26,.18);
+  }
+  .rate-card .label{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#9DB8AA}
+  .rate-pair{display:flex;align-items:baseline;gap:12px;margin:10px 0 4px}
+  .rate-pair .cur{font-family:'Archivo';font-weight:800;font-size:2rem}
+  .rate-pair .arrow{color:var(--brass);font-size:1.4rem}
+  .rate-note{font-size:.82rem;color:#9DB8AA;margin-top:12px;border-top:1px solid rgba(255,255,255,.12);padding-top:12px}
+  .cta{
+    display:inline-block;margin-top:6px;
+    background:var(--green);color:#fff;text-decoration:none;
+    font-weight:600;font-size:.95rem;
+    padding:13px 26px;border-radius:8px;
+  }
+  .cta:hover,.cta:focus-visible{background:var(--green-deep)}
+
+  /* sections */
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  .eyebrow{font-family:'Archivo';font-weight:700;font-size:.78rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px}
+  h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.015em;margin-bottom:26px}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr}}
+  .step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .step h3{font-size:1.02rem;margin:10px 0 8px}
+  .step p{font-size:.92rem;color:var(--muted)}
+  .step .tick{width:30px;height:30px;border-radius:50%;
+    background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:'Archivo';font-weight:700;font-size:.9rem}
+
+  .tiers{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:640px){.tiers{grid-template-columns:1fr}}
+  .tier{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:12px;padding:22px}
+  .tier h3{font-size:1rem;margin-bottom:8px}
+  .tier ul{list-style:none;font-size:.92rem;color:var(--muted)}
+  .tier li{padding-left:20px;position:relative;margin-bottom:6px}
+  .tier li::before{content:"—";position:absolute;left:0;color:var(--brass)}
+
+  .compliance-note{
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:22px;font-size:.95rem;color:var(--muted);max-width:70ch;
+  }
+  .compliance-note strong{color:var(--ink)}
+
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;font-size:.95rem}
+  @media(max-width:640px){.contact-grid{grid-template-columns:1fr}}
+  .contact-grid .cell{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+  .contact-grid .cell b{display:block;font-family:'Archivo';font-size:.85rem;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+
+  details{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    padding:18px 22px;margin-bottom:12px}
+  summary{font-family:'Archivo';font-weight:700;cursor:pointer;font-size:.98rem}
+  details p{margin-top:12px;font-size:.92rem;color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);padding:32px 0 44px;font-size:.85rem;color:var(--muted)}
+  footer .brand{font-size:1rem}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">CHIZA TECH ACE LTD<span>.</span></a>
+    <nav class="nav-links" aria-label="Site">
+      <a href="#how">How it works</a>
+      <a href="#compliance">Compliance</a>
+      <a href="#corridors">Coverage</a>
+      <a href="#contact">Contact</a>
+      <a href="#legal">Terms &amp; Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div>
+        <div class="corridor" aria-hidden="true">Lagos <span class="dotline"></span> Nairobi</div>
+        <h1>Naira to Shillings, <em>at a rate you can see.</em></h1>
+        <p class="lede">CHIZA TECH ACE LTD converts Nigerian Naira (NGN) to Kenyan Shillings (KES) — and back — for individuals and small businesses moving money between Nigeria and Kenya. Transparent rates, verified customers, direct payout to bank or M-Pesa.</p>
+        <a class="cta" href="#contact">Start an exchange</a>
+      </div>
+      <div class="rate-card" aria-label="Example exchange">
+        <div class="label">Example conversion</div>
+        <div class="rate-pair">
+          <span class="cur">₦ NGN</span><span class="arrow">⇄</span><span class="cur">KSh KES</span>
+        </div>
+        <div style="font-size:.95rem;color:#C7D9CE">You send Naira. Your recipient gets Shillings in their bank account or M-Pesa.</div>
+        <div class="rate-note">Rates are quoted live at the time of each transaction and confirmed with you before any money moves. The rate you accept is the rate you get.</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="eyebrow">Process</div>
+      <h2>How an exchange works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="tick">1</div>
+          <h3>Verify once</h3>
+          <p>Create an account and complete a quick identity check (BVN for Nigerian customers, National ID for Kenyan customers). You only do this once.</p>
+        </div>
+        <div class="step">
+          <div class="tick">2</div>
+          <h3>Get your rate</h3>
+          <p>Tell us the amount. We quote you a clear all-in rate — no hidden fees added afterwards. You confirm before anything moves.</p>
+        </div>
+        <div class="step">
+          <div class="tick">3</div>
+          <h3>Pay in, paid out</h3>
+          <p>Transfer Naira to your dedicated account number. Once received, Shillings are paid out to the recipient's bank account or M-Pesa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="compliance">
+    <div class="wrap">
+      <div class="eyebrow">Compliance</div>
+      <h2>Verified customers, monitored transactions</h2>
+      <div class="tiers" style="margin-bottom:18px">
+        <div class="tier">
+          <h3>Tier 1 — Verified</h3>
+          <ul>
+            <li>Government ID verification (BVN / National ID)</li>
+            <li>Name, phone and date-of-birth checks</li>
+            <li>Standard transaction limits apply</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <h3>Tier 2 — Enhanced</h3>
+          <ul>
+            <li>Everything in Tier 1</li>
+            <li>Proof of address and source-of-funds review</li>
+            <li>Higher transaction limits</li>
+          </ul>
+        </div>
+      </div>
+      <div class="compliance-note">
+        <strong>Our commitment:</strong> CHIZA TECH ACE LTD operates a written AML/CFT programme covering customer due diligence, sanctions screening, transaction monitoring and suspicious-activity reporting, in line with Nigerian anti-money-laundering law and international (FATF) standards. Identity verification and sanctions screening are carried out through an independent, certified verification provider, and collections, conversion and payouts are executed through regulated payment infrastructure partners. We do not hold customer deposits or stored-value balances; every exchange is executed as a discrete, per-transaction order. We do not serve anonymous customers and we decline transactions we cannot verify.
+      </div>
+    </div>
+  </section>
+
+  <section id="corridors">
+    <div class="wrap">
+      <div class="eyebrow">Coverage</div>
+      <h2>Where we operate</h2>
+      <div class="tiers" style="margin-bottom:18px">
+        <div class="tier">
+          <h3>Available now</h3>
+          <ul>
+            <li>Nigerian Naira (NGN) to Kenyan Shillings (KES)</li>
+            <li>Kenyan Shillings (KES) to Nigerian Naira (NGN)</li>
+            <li>Payout to bank account or mobile money</li>
+          </ul>
+        </div>
+        <div class="tier" style="border-left-color:var(--brass)">
+          <h3>Planned</h3>
+          <ul>
+            <li>Additional African currency corridors</li>
+            <li>Enabled only once regulatory requirements are met</li>
+            <li>Announced here before launch</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="eyebrow">Contact</div>
+      <h2>Talk to us</h2>
+      <div class="contact-grid">
+        <div class="cell"><b>Email</b>support@chizatechace.com</div>
+        <div class="cell"><b>Nigeria</b>+2348037153906<br>WhatsApp available</div>
+        <div class="cell"><b>Kenya</b>+254714792113<br>WhatsApp available</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="legal">
+    <div class="wrap">
+      <div class="eyebrow">Legal</div>
+      <h2>Terms &amp; Privacy</h2>
+      <details>
+        <summary>Terms of Service (summary)</summary>
+        <p>CHIZA TECH ACE LTD provides currency exchange between NGN and KES for verified customers. All exchange rates are quoted per transaction and confirmed by the customer before execution; a confirmed transaction cannot be reversed once payout has been finalized. We may decline, delay or reverse a transaction where required by law, where verification fails, or where we suspect fraud or money laundering. Transaction limits apply per customer tier. By using this service you confirm the funds you exchange are your own and derived from lawful sources.</p>
+      </details>
+      <details>
+        <summary>Privacy Policy (summary)</summary>
+        <p>We collect the personal information needed to verify your identity and process your transactions (name, contact details, date of birth, government ID numbers, and transaction records). This information is used for identity verification, sanctions screening, transaction processing and legal record-keeping, and is shared only with our regulated payment and verification partners or where the law requires. Records are retained for the period required by anti-money-laundering law. To access or correct your data, contact support@chizatechace.com.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top">CHIZA TECH ACE LTD<span>.</span></a>
+    <p style="margin-top:8px">CHIZA TECH ACE LTD · RC 8306715 · Registered in Nigeria · 1, Wilson Avenue, Ago Palace way, Lagos, Nigeria</p>
+    <p style="margin-top:4px">© 2026 CHIZA TECH ACE LTD. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
